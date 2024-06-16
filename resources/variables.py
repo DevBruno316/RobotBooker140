@@ -1,6 +1,7 @@
 # Variáveis
 url = 'https://restful-booker.herokuapp.com/'
 content_type = 'application/json'
+accept = 'application/json'
 firstname = 'Bruno'
 lastname = 'Bispo'
 totalprice = 230
