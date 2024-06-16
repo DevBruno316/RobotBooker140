@@ -20,6 +20,27 @@ Create Booking
     Should Be Equal    ${response_body}[booking][firstname]    Bruno
     Should Be Equal    ${response_body}[booking][bookingdates][checkin]    2024-06-16
     Should Be Equal    ${response_body}[booking][lastname]    Bispo
+
+Get Booking
+    Get Booking Id    ${url}   ${firstname}   ${lastname}
+    ${headers}    Create Dictionary    Content-Type=${content_type}
+
+    ${response}    GET    url=${url}/booking/${booking_id}    headers=${headers}
+
+    ${response_body}    Set Variable    ${response.json()}
+    Log To Console    ${response_body}
+
+    Status Should Be    200
+    Should Be Equal    ${response_body}[firstname]   ${firstname}
+    Should Be Equal    ${response_body}[lastname]    ${lastname}
+    Should Be Equal    ${response_body}[totalprice]    ${totalprice}
+    Should Be Equal    ${response_body}[depositpaid]    ${depositpaid}
+    Should Be Equal    ${response_body}[bookingdates][checkin]    ${bookingdates}[checkin]
+    Should Be Equal    ${response_body}[bookingdates][checkout]    ${bookingdates}[checkout]
+    Should Be Equal    ${response_body}[additionalneeds]    ${additionalneeds}
+
+
+
     
 
 
