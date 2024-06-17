@@ -1,0 +1,11 @@
+${firstname},${lastname},${totalprice},${depositpaid},${checkin},${checkout},${additionalneeds}
+jennifer,santana,420,false,2024-04-29,2024-05-30,hidromassagem
+danilo,mota,4200,false,2024-06-29,2024-07-30,piscina
+José,correia,5300,true,2024-06-29,2024-07-30,piscina
+Rafael,correia,16000,false,2024-06-29,2024-07-30,cavalo
+Rebeca,Soares,300,true,2024-06-29,2024-07-30,berço
+Lucas,mota,100,false,2024-06-29,2024-07-30,piscina
+Carlos,matos,800,true,2024-06-29,2024-07-30,fraldario
+Jessica,gentili,900,false,2024-06-29,2024-07-30,piscina
+Cris,mota,4200,true,2024-06-29,2024-07-30,area de jogos
+Sabrina,mota,10000,false,2024-06-29,2024-07-30,piscina
