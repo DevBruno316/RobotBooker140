@@ -14,6 +14,7 @@ TC001    ${firstname}    ${lastname}    ${totalprice}    ${depositpaid}    ${che
 
 *** Keywords ***
 Create Booking DDT
+    Ping HealthCheck    ${url}
     [Arguments]    ${firstname}    ${lastname}    ${totalprice}    ${depositpaid}    ${checkin}    ${checkout}    ${additionalneeds}
 
     ${headers}    Create Dictionary    Content_Type=${content_type}
