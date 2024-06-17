@@ -5,9 +5,13 @@ Variables    ../../resources/variables.py
 Suite Setup    Create Token    ${url}
 
 
+
 *** Test Cases ***
 
+Ping - HealthCheck
+    Ping HealthCheck    ${url}
 Create Booking
+    Ping HealthCheck    ${url}
     ${headers}    Create Dictionary    Content-Type=${content_type}
     ${body}    Evaluate    json.loads(open('./fixtures/json/booking1.json').read())
 
@@ -22,6 +26,7 @@ Create Booking
     Should Be Equal    ${response_body}[booking][lastname]    Bispo
 
 Get Booking
+    Ping HealthCheck    ${url}
     Get Booking Id    ${url}   ${firstname}   ${lastname}
     ${headers}    Create Dictionary    Content-Type=${content_type}
 
@@ -40,6 +45,7 @@ Get Booking
     Should Be Equal    ${response_body}[additionalneeds]    ${additionalneeds}
 
 Update Booking
+    Ping HealthCheck    ${url}
     Get Booking Id    ${url}    ${firstname}    ${lastname}
     ${headers}    Create Dictionary    Content-Type=${content_type}    Accept=${accept}    Cookie=token=${token}
 
@@ -61,6 +67,7 @@ Update Booking
     Should Be Equal    ${response_body}[additionalneeds]    ${additionalneeds}
 
 Partial Update Booking
+    Ping HealthCheck    ${url}
     Get Booking Id    ${url}    ${firstname}    ${lastname}
     ${headers}    Create Dictionary    Content_Type=${content_type}    Accept=${accept}    Cookie=token=${token}
 
@@ -81,6 +88,7 @@ Partial Update Booking
     Should Be Equal    ${response_body}[bookingdates][checkout]    ${bookingdates}[checkout]
 
 Delete Booking
+    Ping HealthCheck    ${url}
     Get Booking Id    ${url}    ${firstname}    ${lastname}
     ${headers}    Create Dictionary    Cookie=token=${token}    Content_Type=${content_type}    Accept=${accept}
 
